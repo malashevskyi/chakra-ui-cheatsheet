@@ -4,6 +4,7 @@ import {
   Heading,
   HStack,
   List,
+  Spacer,
   Text,
   useBreakpoint,
 } from '@chakra-ui/react';
@@ -47,6 +48,10 @@ export default function Home() {
         </HoverLink>
         <HoverLink link="https://react-icons.github.io/react-icons">
           react-icons
+        </HoverLink>
+        <Spacer />
+        <HoverLink link="https://github.com/malashevskyi/chakra-ui-cheatsheet">
+          github
         </HoverLink>
       </HStack>
 
