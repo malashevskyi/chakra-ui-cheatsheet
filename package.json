@@ -10,6 +10,14 @@
   "resolutions": {
     "framer-motion": "3.6.7"
   },
+  "keywords": [
+    "cheatsheet",
+    "chakra-ui",
+    "colors",
+    "typography",
+    "box shadow",
+    "icons"
+  ],
   "dependencies": {
     "@chakra-ui/icons": "^1.0.6",
     "@chakra-ui/react": "^1.3.3",
