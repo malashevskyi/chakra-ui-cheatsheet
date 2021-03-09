@@ -59,10 +59,10 @@ export default function Home() {
         />
         <meta property="og:title" content="Chakra-ui cheatsheet" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://chakra-ui-cheatsheet-malashevskyi.vercel.app/" />
+        <meta property="og:url" content="https://chakra-ui-cheatsheet.vercel.app/" />
         <meta
           property="og:image"
-          content="https://chakra-ui-cheatsheet-malashevskyi.vercel.app/images/og.jpg"
+          content="https://chakra-ui-cheatsheet.vercel.app/images/og.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
