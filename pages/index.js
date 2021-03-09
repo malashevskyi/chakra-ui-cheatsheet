@@ -1,65 +1,177 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import {
+  Box,
+  Container,
+  Heading,
+  HStack,
+  List,
+  Text,
+  useBreakpoint,
+} from '@chakra-ui/react';
+import Head from 'next/head';
+import BoxShadow from '../components/BoxShadow';
+import Breakpoints from '../components/Breakpoints';
+import Colors from '../components/Colors';
+import FontSizes from '../components/FontSizes';
+import FontWeight from '../components/FontWeight';
+import HoverLink from '../components/HoverLink';
+import Icons from '../components/Icons';
+import LetterSpacing from '../components/LetterSpacing';
+import LineHeight from '../components/LineHeight';
+import Radius from '../components/Radius';
+import Spaces from '../components/Spaces';
+import ZIndices from '../components/ZIndices';
+import { sizes } from '../data';
 
 export default function Home() {
+  const bp = useBreakpoint();
+
   return (
-    <div className={styles.container}>
+    <Box as="main" pb={10}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      {/* TOP LINKS */}
+      <HStack spacing={1} m={1}>
+        <HoverLink link="https://chakra-ui.com/docs/getting-started">
+          chakra documentation
+        </HoverLink>
+        <HoverLink link="https://react-icons.github.io/react-icons">
+          react-icons
+        </HoverLink>
+      </HStack>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+      {/* TITLE */}
+      <Heading as="h1" py={4} align="center">
+        Chakra-ui cheatsheet
+      </Heading>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+      {/* COLORS */}
+      <Container
+        maxW="100%"
+        overflow="auto"
+        w="1290px"
+        py={2}
+        mb={7}
+        d="flex"
+        flexWrap="wrap"
+      >
+        <Colors />
+      </Container>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+      {/* RESPONSIVE CONTAINER FIRST */}
+      <Container maxW={[null, 480, 768, 992, 1280, 1536]} mb="4" p={0}>
+        <Heading fontSize="xl" textAlign="center">
+          Responsive container, resize to see breakpoints
+          <br />
+          <Box as="span" fontWeight="normal" fontSize={['xs', 'sm', 'md']}>
+            {'Container maxW={[null, 480, 768, 992, 1280, 1536]} />'}
+          </Box>
+        </Heading>
+        <Box bg="blue.300" color="white" textAlign="center">
+          {bp}
+        </Box>
+      </Container>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+      {/* RESPONSIVE CONTAINER SECOND */}
+      <Container
+        maxW={[
+          null,
+          'container.sm',
+          'container.md',
+          'container.lg',
+          'container.xl',
+        ]}
+        p={0}
+        mb="4"
+      >
+        <Heading fontSize="xl" textAlign="center">
+          Responsive container, resize to see breakpoints
+          <br />
+          <Box as="span" fontWeight="normal" fontSize={['xs', 'sm', 'md']}>
+            {
+              '<Container maxW={[null, container.sm, container.md, container.lg, container.xl]} />'
+            }
+          </Box>
+        </Heading>
+        <Box bg="blue.300" color="white" textAlign="center">
+          {bp}
+        </Box>
+      </Container>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* SIZES (Container) */}
+      <Heading textAlign="center" fontSize="xl">
+        {'Sizes (<Container maxW="id" />)'}
+      </Heading>
+      {sizes.map(([sizeId, sizeRem, sizePx]) => (
+        <Container
+          maxW={sizeId}
+          bg="blue.300"
+          color="white"
+          mb={1}
+          d="flex"
+          justifyContent="center"
+          key={sizeId}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+          <Text px={3}>{sizeId}</Text>
+          <Text px={3}>{sizeRem}</Text>
+          <Text px={3}>{sizePx}</Text>
+        </Container>
+      ))}
+
+      {/* TYPOGRAPHY BOXES */}
+      <Container maxW="1290px" overflow="auto" m="40px auto 0" mb={10}>
+        <Box w="1260px" sx={{ columnCount: '5' }}>
+          <FontSizes />
+          <FontWeight />
+          <LineHeight />
+          <LetterSpacing />
+          <Radius />
+          <ZIndices />
+          <Breakpoints />
+          <Spaces />
+        </Box>
+      </Container>
+
+      {/* BOX SHADOW */}
+      <Container maxW="1290px" overflow="auto" m="40px auto 0" mb={10}>
+        <List d="flex" w="1260px">
+          <BoxShadow />
+        </List>
+      </Container>
+
+      {/* ICONS */}
+      <Container
+        maxW="100%"
+        overflow="auto"
+        w="1290px"
+        py="1rem"
+        d="flex"
+        mb={10}
+        flexWrap="wrap"
+      >
+        <Icons />
+      </Container>
+
+      {/* GRADIENTS */}
+      {/* <Container
+        maxW="full"
+        overflow="auto"
+        d="flex"
+        justifyContent="center"
+        flexWrap="wrap"
+      >
+        <Gradients />
+      </Container> */}
+    </Box>
+  );
 }
