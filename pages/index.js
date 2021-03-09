@@ -29,8 +29,49 @@ export default function Home() {
   return (
     <Box as="main" pb={10}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Chakra-ui cheatsheet</title>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="images/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="images/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="images/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="images/favicon/site.webmanifest"></link>
+
+        <meta
+          name="keywords"
+          content="colors, container, sizes, typography, box shadows, chakra-ui, icons"
+        />
+        <meta
+          name="description"
+          content="chakra-ui cheatsheet, colors / container sizes / typography / box shadows / chakra-ui icons"
+        />
+        <meta property="og:title" content="Chakra-ui cheatsheet" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://chakra-ui-cheatsheet-malashevskyi.vercel.app/" />
+        <meta
+          property="og:image"
+          content="https://chakra-ui-cheatsheet-malashevskyi.vercel.app/images/og.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Chakra-ui cheatsheet" />
+        <meta
+          property="og:description"
+          content="chakra-ui cheatsheet, colors / container sizes / typography / box shadows / chakra-ui icons"
+        />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"
