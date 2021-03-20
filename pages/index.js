@@ -83,12 +83,17 @@ export default function Home() {
         <HoverLink link="https://chakra-ui.com/docs/getting-started">
           chakra documentation
         </HoverLink>
-        <HoverLink link="https://react-icons.github.io/react-icons">
-          react-icons
+        <HoverLink link="https://codesandbox.io/s/test-jp1w5?file=/src/App.js">
+          container/breakpoints demonstration
         </HoverLink>
         <Spacer />
         <HoverLink link="https://github.com/malashevskyi/chakra-ui-cheatsheet">
           github
+        </HoverLink>
+      </HStack>
+      <HStack spacing={1} m={1}>
+        <HoverLink link="https://react-icons.github.io/react-icons">
+          react-icons
         </HoverLink>
       </HStack>
 
